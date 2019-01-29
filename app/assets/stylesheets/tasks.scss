@@ -1,3 +1,35 @@
-// Place all the styles related to the Tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(#8e2de2, #4a00e0);
+}
+
+.text-color {
+  background: linear-gradient(to right, #8e2de2 0%, #4a00e0 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  border: solid 1px transparent;
+  border-image: linear-gradient(to right, #8e2de2 0%, #4a00e0 100%);
+  border-image-slice: 1;
+  padding: 5px;
+  &:hover {
+    background: linear-gradient(to right, #8e2de2 0%, #4a00e0 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    border: solid 1px transparent;
+    border-image: linear-gradient(to right, #8e2de2 0%, #4a00e0 100%);
+    border-image-slice: 30;
+    padding: 5px;
+  }
+}
+
+.center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}

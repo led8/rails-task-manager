@@ -1,11 +1,17 @@
-<h1>New task</h1>
+<div class="center">
+  <div class="container">
+    <h1 class="text-light">New task</h1>
 
-<%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+    <div class="form-group">
+    <%= form_for(@task) do |f| %>
+      <%= f.label :title, class: 'text-light' %>
+      <%= f.text_field :title, class: 'form-control mb-3' %>
 
-  <%= f.label :details %>
-  <%= f.text_field :details %>
+      <%= f.label :details, class: 'text-light' %>
+      <%= f.text_field :details, class: 'form-control mb-3' %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.submit class: 'btn btn-outline-light' %>
+    <% end %>
+    </div>
+  </div>
+</div>

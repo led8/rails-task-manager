@@ -1,15 +1,29 @@
-<h1>My tasks</h1>
-<%= link_to 'Create new task', new_task_path %>
-
-
-  <% @tasks.each do |task| %>
-    <% if task.completed %>
-      <p>[x] <%= link_to task.title, task_path(task) %> | <%= task.details %> |
-      <%= link_to 'Delete task', task_path(task), method: :delete, data: { confirm: 'Are you sure ?' } %></p>
-    <% else %>
-      <p>[ ] <%= link_to task.title, task_path(task) %> | <%= task.details %>
-        <%= link_to 'Delete task', task_path(task), method: :delete, data: { confirm: 'Are you sure ?' } %>
-      </p>
+<div class="ml-3 text-light">
+  <h1>My tasks</h1>
+  <i class="fas fa-plus"></i>  <%= link_to 'Create new task', new_task_path, :class => "text-light" %>
+</div>
+<div class="container">
+  <div class="row">
+    <% @tasks.each do |task| %>
+      <div class="col-sm-6 mt-5">
+        <div class="card">
+          <div class="card-body">
+            <% if !task.completed %>
+              <h5 class="card-title"><%= task.title %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= task.details %></h6>
+              <p class="card-text text-danger">Uncompleted</p>
+              <%= link_to 'Go to task', task_path(task), :class => "card-link text-color" %>
+              <%= link_to 'Delete task', task_path(task), method: :delete, data: { confirm: 'Are you sure ?' }, :class => "card-link text-color" %>
+            <% else %>
+              <h5 class="card-title"><%= task.title %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= task.details %></h6>
+              <p class="card-text text-success">Completed</p>
+              <%= link_to 'Go to task', task_path(task), :class => "card-link text-color" %>
+              <%= link_to 'Delete task', task_path(task), method: :delete, data: { confirm: 'Are you sure ?' }, :class => "card-link text-color" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  <% end %>
-
+  </div>
+</div>
