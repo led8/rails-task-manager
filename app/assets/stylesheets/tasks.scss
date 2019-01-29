@@ -5,8 +5,9 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 50px;
   background: radial-gradient(#8e2de2, #4a00e0);
+  background-attachment: fixed;
 }
 
 .text-color {
