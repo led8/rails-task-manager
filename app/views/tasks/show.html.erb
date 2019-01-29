@@ -2,10 +2,18 @@
   <div class="container">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <% if !@task.completed %>
+        <% if !@task.completed && !@task.progress %>
           <h5 class="card-title"><%= @task.title %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= @task.details %></h6>
           <p class="card-text text-danger">Uncompleted</p>
+          <p class="card-text text-danger">Not in progress</p>
+          <%= link_to 'Back to list', tasks_path, :class => "card-link text-color" %>
+          <%= link_to 'Edit task', edit_task_path(@task), :class => "card-link text-color" %>
+        <% elsif !@task.completed && @task.progress %>
+          <h5 class="card-title"><%= @task.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= @task.details %></h6>
+          <p class="card-text text-danger">Uncompleted</p>
+          <p class="card-text text-warning">In progress</p>
           <%= link_to 'Back to list', tasks_path, :class => "card-link text-color" %>
           <%= link_to 'Edit task', edit_task_path(@task), :class => "card-link text-color" %>
         <% else %>

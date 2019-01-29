@@ -40,6 +40,6 @@ class TasksController < ApplicationController
   end
 
   def task_params_to_update
-    params.require(:task).permit(:title, :details, :completed)
+    params.require(:task).permit(:title, :details, :completed, :progress)
   end
 end
