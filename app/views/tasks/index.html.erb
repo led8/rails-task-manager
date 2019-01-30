@@ -19,7 +19,7 @@
               <h5 class="card-title"><%= task.title %></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%= task.details %></h6>
               <p class="card-text text-danger">Uncompleted</p>
-              <p class="card-text text-warning">In progress</p>
+              <p class="card-text text-success">In progress</p>
               <%= link_to 'Go to task', task_path(task), :class => "card-link text-color" %>
               <%= link_to 'Delete task', task_path(task), method: :delete, data: { confirm: 'Are you sure ?' }, :class => "card-link text-color" %>
             <% else %>
